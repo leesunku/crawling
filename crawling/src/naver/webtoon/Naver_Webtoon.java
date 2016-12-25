@@ -12,7 +12,7 @@ import org.jsoup.select.Elements;
 
 import naver.webtoon.model.Naver_Webtoon_weekday;
 
-public class Naver_Webtoon_getWeekdayList {
+public class Naver_Webtoon {
 	public List<Naver_Webtoon_weekday> getWeekdayWebtoonList(String url){
 		List<Naver_Webtoon_weekday> weekdayWebtoonList = new ArrayList<>();
 		try {
@@ -25,6 +25,9 @@ public class Naver_Webtoon_getWeekdayList {
 					Naver_Webtoon_weekday item = new Naver_Webtoon_weekday();
 					item.setImgUrl(elm.select("div.thumb a img").attr("src"));
 					item.setTitle(elm.select("dl dt a").text());
+					String titleId = elm.select("dl dt a").attr("href");
+					String id = titleId.split("titleId=")[1].split("&")[0];
+					item.setTitleId(Integer.parseInt(id));
 					item.setArtist(elm.select("dl dd.desc a").text());
 					item.setStarScore(Float.parseFloat(elm.select("dl dd div.rating_type strong").text()));
 					weekdayWebtoonList.add(item);				
@@ -33,5 +36,20 @@ public class Naver_Webtoon_getWeekdayList {
 			ie.printStackTrace();
 		}
 		return weekdayWebtoonList;
+	}
+	public List<String> getWebtoonSingleContent(String url){
+		List<String> urls = new ArrayList<>();
+			try {
+				Document doc = Jsoup.connect(url).get();
+				Elements area = doc.select("div#comic_view_area div.wt_viewer img");
+				Iterator<Element> iter = area.iterator();
+				while (iter.hasNext()){
+					Element elm = iter.next();
+					System.out.println(elm.attr("src"));			
+				}
+			} catch(IOException ie){
+				ie.printStackTrace();
+			}
+		return urls;
 	}
 }

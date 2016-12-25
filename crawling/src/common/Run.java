@@ -1,23 +1,29 @@
 package common;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import naver.main.Naver_getRealTimeKeyword;
 import naver.main.model.Naver_realTimeKeyword;
 import naver.main.viewer.Naver_Viewer;
-import naver.webtoon.Naver_Webtoon_getWeekdayList;
+import naver.webtoon.Naver_Webtoon;
 import naver.webtoon.model.Naver_Webtoon_weekday;
 import naver.webtoon.viewer.Naver_Webtoon_Viewer;
 
 public class Run {
 	public static void main(String[] args) {
-
+		//http://comic.naver.com/webtoon/detail.nhn?titleId=25455&no=439&weekday=tue
+		String url = new Url().getWebtoonSingleContent("25455", 439, "tue");
+		Naver_Webtoon content = new Naver_Webtoon();
+		content.getWebtoonSingleContent(url);
+		
 	}
 }
 /*
-Naver_getRealTimeKeyword getRealTimeKeys = new Naver_getRealTimeKeyword();
-String url = new Url().getRealTimeKeywords();
-List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword(url);
-new Naver_Viewer().realTimeKeywordView(item);
+		Naver_getRealTimeKeyword getRealTimeKeys = new Naver_getRealTimeKeyword();
+		String url = new Url().getRealTimeKeywords();
+		List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword(url);
+		new Naver_Viewer().realTimeKeywordView(item);
 
 실시간 급상승 검색어
 
@@ -36,43 +42,63 @@ rank	keyword			state		point			link
 */
 
 /*		
-Naver_Webtoon_getWeekdayList naverWeebtoons = new Naver_Webtoon_getWeekdayList();
-//week : mon tue wed thu fri sat sun
-String week = "tue";
-//orderType : Update ViewCount StarScore TitleName
-String orderType = "StarScore";
-String url = new Url().getWeekdayWebtoon(week, orderType);
-List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(url);
-new Naver_Webtoon_Viewer().weekdayWebtoonView(items);
+
+		Naver_Webtoon naverWeebtoons = new Naver_Webtoon();
+		//week : mon tue wed thu fri sat sun
+		String week = "tue";
+		//orderType : Update ViewCount StarScore TitleName
+		String orderType = "StarScore";
+		String url = new Url().getWeekdayWebtoon(week, orderType);
+		List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(url);
+		new Naver_Webtoon_Viewer().weekdayWebtoonView(items);
+
 요일별 웹툰 리스트
 
-title	artist			score		imgUrl
-슈퍼 시크릿	이온			9.98		http://thumb.comic.naver.net/webtoon/650304/thumbnail/title_thumbnail_20150323144620_t83x90.jpg			
-오!주예수여	아현			9.98		http://thumb.comic.naver.net/webtoon/655744/thumbnail/title_thumbnail_20150601184016_t83x90.jpg			
-꿈꾸는 소녀,..	한경찰			9.97		http://thumb.comic.naver.net/webtoon/686879/thumbnail/title_thumbnail_20161025142411_t83x90.jpg			
-패밀리 사이즈	남지은 / 김인호			9.97		http://thumb.comic.naver.net/webtoon/626906/thumbnail/title_thumbnail_20150810235651_t83x90.jpg			
-가우스전자 시..	곽백수			9.97		http://thumb.comic.naver.net/webtoon/675554/thumbnail/title_thumbnail_20160303181701_t83x90.jpg			
-하이브3	김규삼			9.96		http://thumb.comic.naver.net/webtoon/675331/thumbnail/title_thumbnail_20160229184941_t83x90.jpg			
-미라클! 용사님	정하			9.96		http://thumb.comic.naver.net/webtoon/654817/thumbnail/title_thumbnail_20150514191647_t83x90.jpg			
-제로게임	즐바센			9.96		http://thumb.comic.naver.net/webtoon/676695/thumbnail/title_thumbnail_20160323171611_t83x90.jpg			
-신의 언어	장래혁			9.96		http://thumb.comic.naver.net/webtoon/602287/thumbnail/title_thumbnail_20150302193945_t83x90.jpg			
-완벽한 허니문	화류동풍 / 옛사람			9.95		http://thumb.comic.naver.net/webtoon/689705/thumbnail/title_thumbnail_20161212185807_t83x90.jpg			
-열정호구	솔뱅이			9.95		http://thumb.comic.naver.net/webtoon/686312/thumbnail/title_thumbnail_20161010182406_t83x90.jpg			
-신도림	오세형			9.94		http://thumb.comic.naver.net/webtoon/683496/thumbnail/title_thumbnail_20160805110206_t83x90.jpg			
-놓지마 정신줄..	신태훈 / 나승훈			9.94		http://thumb.comic.naver.net/webtoon/682637/thumbnail/title_thumbnail_20160729190602_t83x90.jpg			
-윌유메리미	마인드C			9.94		http://thumb.comic.naver.net/webtoon/616239/thumbnail/title_thumbnail_20161031214436_t83x90.jpg			
-모태솔로수용소..	5iAm			9.93		http://thumb.comic.naver.net/webtoon/666670/thumbnail/title_thumbnail_20151109202307_t83x90.jpg			
-차원이 다른 ..	요엔			9.93		http://thumb.comic.naver.net/webtoon/679569/thumbnail/title_thumbnail_20160606180504_t83x90.jpg			
-첩보의 별 시..	이상신 / 국중록			9.91		http://thumb.comic.naver.net/webtoon/686669/thumbnail/title_thumbnail_20161014154832_t83x90.jpg			
-하루 3컷	배진수			9.9		http://thumb.comic.naver.net/webtoon/644180/thumbnail/title_thumbnail_20141231175152_t83x90.jpg			
-기로	구들			9.9		http://thumb.comic.naver.net/webtoon/653344/thumbnail/title_thumbnail_20150420212358_t83x90.jpg			
-투명한 동거	정서			9.89		http://thumb.comic.naver.net/webtoon/677740/thumbnail/title_thumbnail_20160418160211_t83x90.jpg			
-마음의소리	조석			9.85		http://thumb.comic.naver.net/webtoon/20853/thumbnail/thumbnail_title_20853_83x90.gif			
-노블레스	손제호 / 이광수			9.84		http://thumb.comic.naver.net/webtoon/25455/thumbnail/title_thumbnail_20100614120245_t83x90.jpg			
-에이머	구동인			9.7		http://thumb.comic.naver.net/webtoon/400739/thumbnail/title_thumbnail_20150504175746_t83x90.jpg			
-덴마	양영순			9.6		http://thumb.comic.naver.net/webtoon/119874/thumbnail/title_thumbnail_20150706185233_t83x90.jpg			
-심연의 하늘 ..	윤인완 / 김선희			6.57		http://thumb.comic.naver.net/webtoon/679547/thumbnail/title_thumbnail_20160704144601_t83x90.jpg			
-공감.jpg	임총			3.49		http://thumb.comic.naver.net/webtoon/686911/thumbnail/title_thumbnail_20161017191626_t83x90.jpg			
+titleId	title	artist			score		imgUrl
+650304	슈퍼 시크릿	이온			9.98		http://thumb.comic.naver.net/webtoon/650304/thumbnail/title_thumbnail_20150323144620_t83x90.jpg			
+655744	오!주예수여	아현			9.98		http://thumb.comic.naver.net/webtoon/655744/thumbnail/title_thumbnail_20150601184016_t83x90.jpg			
+686879	꿈꾸는 소녀,..	한경찰			9.97		http://thumb.comic.naver.net/webtoon/686879/thumbnail/title_thumbnail_20161025142411_t83x90.jpg			
+626906	패밀리 사이즈	남지은 / 김인호			9.97		http://thumb.comic.naver.net/webtoon/626906/thumbnail/title_thumbnail_20150810235651_t83x90.jpg			
+675554	가우스전자 시..	곽백수			9.97		http://thumb.comic.naver.net/webtoon/675554/thumbnail/title_thumbnail_20160303181701_t83x90.jpg			
+675331	하이브3	김규삼			9.96		http://thumb.comic.naver.net/webtoon/675331/thumbnail/title_thumbnail_20160229184941_t83x90.jpg			
+654817	미라클! 용사님	정하			9.96		http://thumb.comic.naver.net/webtoon/654817/thumbnail/title_thumbnail_20150514191647_t83x90.jpg			
+676695	제로게임	즐바센			9.96		http://thumb.comic.naver.net/webtoon/676695/thumbnail/title_thumbnail_20160323171611_t83x90.jpg			
+602287	신의 언어	장래혁			9.96		http://thumb.comic.naver.net/webtoon/602287/thumbnail/title_thumbnail_20150302193945_t83x90.jpg			
+689705	완벽한 허니문	화류동풍 / 옛사람			9.95		http://thumb.comic.naver.net/webtoon/689705/thumbnail/title_thumbnail_20161212185807_t83x90.jpg			
+686312	열정호구	솔뱅이			9.95		http://thumb.comic.naver.net/webtoon/686312/thumbnail/title_thumbnail_20161010182406_t83x90.jpg			
+683496	신도림	오세형			9.94		http://thumb.comic.naver.net/webtoon/683496/thumbnail/title_thumbnail_20160805110206_t83x90.jpg			
+682637	놓지마 정신줄..	신태훈 / 나승훈			9.94		http://thumb.comic.naver.net/webtoon/682637/thumbnail/title_thumbnail_20160729190602_t83x90.jpg			
+616239	윌유메리미	마인드C			9.94		http://thumb.comic.naver.net/webtoon/616239/thumbnail/title_thumbnail_20161031214436_t83x90.jpg			
+666670	모태솔로수용소..	5iAm			9.93		http://thumb.comic.naver.net/webtoon/666670/thumbnail/title_thumbnail_20151109202307_t83x90.jpg			
+679569	차원이 다른 ..	요엔			9.93		http://thumb.comic.naver.net/webtoon/679569/thumbnail/title_thumbnail_20160606180504_t83x90.jpg			
+686669	첩보의 별 시..	이상신 / 국중록			9.91		http://thumb.comic.naver.net/webtoon/686669/thumbnail/title_thumbnail_20161014154832_t83x90.jpg			
+644180	하루 3컷	배진수			9.9		http://thumb.comic.naver.net/webtoon/644180/thumbnail/title_thumbnail_20141231175152_t83x90.jpg			
+653344	기로	구들			9.9		http://thumb.comic.naver.net/webtoon/653344/thumbnail/title_thumbnail_20150420212358_t83x90.jpg			
+677740	투명한 동거	정서			9.89		http://thumb.comic.naver.net/webtoon/677740/thumbnail/title_thumbnail_20160418160211_t83x90.jpg			
+20853	마음의소리	조석			9.85		http://thumb.comic.naver.net/webtoon/20853/thumbnail/thumbnail_title_20853_83x90.gif			
+25455	노블레스	손제호 / 이광수			9.84		http://thumb.comic.naver.net/webtoon/25455/thumbnail/title_thumbnail_20100614120245_t83x90.jpg			
+400739	에이머	구동인			9.7		http://thumb.comic.naver.net/webtoon/400739/thumbnail/title_thumbnail_20150504175746_t83x90.jpg			
+119874	덴마	양영순			9.6		http://thumb.comic.naver.net/webtoon/119874/thumbnail/title_thumbnail_20150706185233_t83x90.jpg			
+679547	심연의 하늘 ..	윤인완 / 김선희			6.57		http://thumb.comic.naver.net/webtoon/679547/thumbnail/title_thumbnail_20160704144601_t83x90.jpg			
+686911	공감.jpg	임총			3.49		http://thumb.comic.naver.net/webtoon/686911/thumbnail/title_thumbnail_20161017191626_t83x90.jpg			
 
+
+*/
+/*
+
+
+String url = new Url().getWebtoonSingleContent("25455", 439, "tue");
+Naver_Webtoon content = new Naver_Webtoon();
+content.getWebtoonSingleContent(url);
+
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_1.jpg
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_2.jpg
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_3.jpg
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_4.jpg
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_5.jpg
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_6.jpg
+http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_7.jpg
+.......
+웹툰 컨텐츠 url 리스트
 
 */

@@ -9,9 +9,10 @@ public class Naver_Webtoon_Viewer {
 	public void weekdayWebtoonView(List<Naver_Webtoon_weekday> items){
 		System.out.println("요일별 웹툰 리스트");
 		System.out.println();			
-		System.out.println("title\tartist\t\t\tscore\t\timgUrl");
+		System.out.println("titleId\ttitle\tartist\t\t\tscore\t\timgUrl");
 		for (Naver_Webtoon_weekday item : items){	
 			System.out.println(
+				item.getTitleId() + "\t" +
 				item.getTitle() + "\t" +
 				item.getArtist() + "\t\t\t" +
 				item.getStarScore() + "\t\t" +

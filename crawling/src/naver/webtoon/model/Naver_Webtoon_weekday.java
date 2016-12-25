@@ -5,6 +5,7 @@ public class Naver_Webtoon_weekday {
 	private String title;
 	private String artist;
 	private float starScore;
+	private int titleId;
 	public Naver_Webtoon_weekday() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,11 +33,18 @@ public class Naver_Webtoon_weekday {
 	public void setStarScore(float starScore) {
 		this.starScore = starScore;
 	}
-	public Naver_Webtoon_weekday(String imgUrl, String title, String artist, float starScore) {
+	public int getTitleId() {
+		return titleId;
+	}
+	public void setTitleId(int titleId) {
+		this.titleId = titleId;
+	}
+	public Naver_Webtoon_weekday(String imgUrl, String title, String artist, float starScore, int titleId) {
 		super();
 		this.imgUrl = imgUrl;
 		this.title = title;
 		this.artist = artist;
 		this.starScore = starScore;
+		this.titleId = titleId;
 	}
 }
