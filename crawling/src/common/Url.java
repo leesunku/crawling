@@ -1,18 +1,11 @@
 package common;
 
 public class Url {
-	private String realTimeKeywords = "http://www.naver.com/";
-	
-	public Url() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public String getRealTimeKeywords() {
-		return realTimeKeywords;
-	}
-
-	public void setRealTimeKeywords(String realTimeKeywords) {
-		this.realTimeKeywords = realTimeKeywords;
+		return "http://www.naver.com/";
 	}
 	
+	public String getWeekdayWebtoon(String week, String orderType) {
+		return "http://comic.naver.com/webtoon/weekdayList.nhn?week=" + week + "&order=" + orderType + "&view=image";
+	}
 }
