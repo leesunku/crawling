@@ -11,29 +11,29 @@
 
 ### 클래스 & 메소드
 
-> Class : Naver_Main
+> Class : ```Naver_Main```
 > > naver 메인페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
 
-> > Method : getRealTimeKeyword 
+> > Method : ```getRealTimeKeyword```
 > > > naver 실시간 급상승 검색어
 > > > > Input : 
 
 > > > > Output : 
-> > > > > int rank; // 순위
+> > > > > ```int rank;``` // 순위
 
-> > > > > String keyword; // 키워드
+> > > > > ```String keyword;``` // 키워드
 
-> > > > > int point; // 수치
+> > > > > ```int point;``` // 수치
 
-> > > > > String state; //상태 : 상승, 하락, 신규
+> > > > > ```String state;``` //상태 : 상승, 하락, 신규
 
-> > > > > String link; // 검색 결과 url
+> > > > > ```String link;``` // 검색 결과 url
 
 > > > > Return Class : ```List<Naver_realTimeKeyword>```
 
 
 
-> Class : Naver_Webtoon
+> Class : ```Naver_Webtoon```
 > > naver 웹툰페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
 
 ### 개발된 기능
