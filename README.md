@@ -12,6 +12,7 @@
 
 > Class : Naver_Main
 > > naver 메인페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
+
 > > Method : getRealTimeKeyword 
 > > > naver 실시간 급상승 검색어
 
