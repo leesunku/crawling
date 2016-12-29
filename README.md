@@ -59,14 +59,12 @@
 
 
 
-### 개발된 기능
+### 
 > crawling/jar  내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
 > > 
 
 ### 예제
-
 > naver 실시간 급상승 검색어
-
 >	> 실행코드
 
 > >```
@@ -74,7 +72,6 @@
 > >List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword();
 > >new Naver_Viewer().realTimeKeywordView(item);
 > >```
-
 
 >	> 결과
 > >```
