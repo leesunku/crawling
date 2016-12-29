@@ -10,12 +10,12 @@
 > 2016-12-20 naver 실시간 급상승 검색어
 >	> 실행코드
 
-```
+>```
 >Naver_getRealTimeKeyword getRealTimeKeys = new Naver_getRealTimeKeyword();
 >String url = new Url().getRealTimeKeywords();
 >List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword(url);
 >new Naver_Viewer().realTimeKeywordView(item);
-```
+>```
 
 
 ##### 결과
