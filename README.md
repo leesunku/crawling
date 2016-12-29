@@ -47,9 +47,8 @@
 >	> 실행코드
 
 > >```
-> >Naver_Main naverMain = new Naver_Main();
-> >String url = new Url().getRealTimeKeywords();
-> >List<Naver_realTimeKeyword> item = naverMain.getRealTimeKeyword(url);
+> >Naver_main getRealTimeKeys = new Naver_main();
+> >List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword();
 > >new Naver_Viewer().realTimeKeywordView(item);
 > >```
 
@@ -74,14 +73,15 @@
 
 > > 실행코드
 > >```
-> >Naver_Webtoon naverWeebtoons = new Naver_Webtoon();
-> >//week : mon tue wed thu fri sat sun
-> >String week = "tue";
-> >//orderType : Update ViewCount StarScore TitleName
-> >String orderType = "StarScore";
-> >String url = new Url().getWeekdayWebtoon(week, orderType);
-> >List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(url);
-> >new Naver_Webtoon_Viewer().weekdayWebtoonView(items);
+
+> > Naver_Webtoon naverWeebtoons = new Naver_Webtoon();
+> > //week : mon tue wed thu fri sat sun
+> > String week = "tue";
+> > //orderType : Update ViewCount StarScore TitleName
+> > String orderType = "StarScore";
+> > List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(week, orderType);
+> > new Naver_Webtoon_Viewer().weekdayWebtoonView(items);
+
 > >```
 > > 결과
 > >```
