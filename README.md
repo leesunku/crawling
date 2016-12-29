@@ -57,8 +57,7 @@
 
 > > > > Return Class : ```List<Naver_Webtoon_weekday>```
 
-
-### 
+### 사용법
 > crawling/jar  내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
 
 ### 예제
