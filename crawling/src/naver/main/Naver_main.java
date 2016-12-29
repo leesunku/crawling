@@ -10,10 +10,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import common.Url;
 import naver.main.model.Naver_realTimeKeyword;
 
-public class Naver_getRealTimeKeyword {
-	public List<Naver_realTimeKeyword> getRealTimeKeyword(String url){
+public class Naver_main {
+	public List<Naver_realTimeKeyword> getRealTimeKeyword(){
+		String url = new Url().getRealTimeKeywords();
 		List<Naver_realTimeKeyword> realTimeKeywordList = new ArrayList<>();
 		try {
 			Document doc = Jsoup.connect(url).get();
@@ -25,7 +27,7 @@ public class Naver_getRealTimeKeyword {
 					Naver_realTimeKeyword item = new Naver_realTimeKeyword();
 					item.setRank(Integer.parseInt(elm.attr("value")));
 					item.setKeyword(elm.select("a").attr("title"));
-					item.setPoint(Integer.parseInt(elm.select("a span.rk").text()));
+					item.setPoint(elm.select("a span.rk").text());
 					item.setState(elm.select("a span.tx").text());
 					item.setLink(elm.select("a").attr("href"));	
 					realTimeKeywordList.add(item);				

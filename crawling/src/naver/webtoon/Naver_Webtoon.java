@@ -10,10 +10,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import common.Url;
 import naver.webtoon.model.Naver_Webtoon_weekday;
 
 public class Naver_Webtoon {
-	public List<Naver_Webtoon_weekday> getWeekdayWebtoonList(String url){
+	public List<Naver_Webtoon_weekday> getWeekdayWebtoonList(String week,String  orderType){
+		String url = new Url().getWeekdayWebtoon(week, orderType);
 		List<Naver_Webtoon_weekday> weekdayWebtoonList = new ArrayList<>();
 		try {
 			Document doc = Jsoup.connect(url).get();
@@ -37,7 +39,8 @@ public class Naver_Webtoon {
 		}
 		return weekdayWebtoonList;
 	}
-	public List<String> getWebtoonSingleContent(String url){
+	public List<String> getWebtoonSingleContent(String titleId, int no, String week){
+		String url = new Url().getWebtoonSingleContent(titleId, no, week);
 		List<String> urls = new ArrayList<>();
 			try {
 				Document doc = Jsoup.connect(url).get();

@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import naver.main.Naver_getRealTimeKeyword;
+import naver.main.Naver_main;
 import naver.main.model.Naver_realTimeKeyword;
 import naver.main.viewer.Naver_Viewer;
 import naver.webtoon.Naver_Webtoon;
@@ -12,17 +12,11 @@ import naver.webtoon.viewer.Naver_Webtoon_Viewer;
 
 public class Run {
 	public static void main(String[] args) {
-		//http://comic.naver.com/webtoon/detail.nhn?titleId=25455&no=439&weekday=tue
-		String url = new Url().getWebtoonSingleContent("25455", 439, "tue");
-		Naver_Webtoon content = new Naver_Webtoon();
-		content.getWebtoonSingleContent(url);
-		
 	}
 }
 /*
-		Naver_getRealTimeKeyword getRealTimeKeys = new Naver_getRealTimeKeyword();
-		String url = new Url().getRealTimeKeywords();
-		List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword(url);
+		Naver_main getRealTimeKeys = new Naver_main();
+		List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword();
 		new Naver_Viewer().realTimeKeywordView(item);
 
 실시간 급상승 검색어
@@ -48,10 +42,9 @@ rank	keyword			state		point			link
 		String week = "tue";
 		//orderType : Update ViewCount StarScore TitleName
 		String orderType = "StarScore";
-		String url = new Url().getWeekdayWebtoon(week, orderType);
-		List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(url);
+		List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(week, orderType);
 		new Naver_Webtoon_Viewer().weekdayWebtoonView(items);
-
+		
 요일별 웹툰 리스트
 
 titleId	title	artist			score		imgUrl
@@ -87,9 +80,9 @@ titleId	title	artist			score		imgUrl
 /*
 
 
-String url = new Url().getWebtoonSingleContent("25455", 439, "tue");
-Naver_Webtoon content = new Naver_Webtoon();
-content.getWebtoonSingleContent(url);
+		Naver_Webtoon content = new Naver_Webtoon();
+		content.getWebtoonSingleContent("25455", 439, "tue");
+
 
 http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_1.jpg
 http://imgcomic.naver.net/webtoon/25455/439/20161219123044_0ae80029c07aef37dae5e37982fa110a_IMAG01_2.jpg

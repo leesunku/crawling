@@ -3,7 +3,7 @@ package naver.main.model;
 public class Naver_realTimeKeyword {
 	private int rank;
 	private String keyword;
-	private int point;
+	private String point;
 	private String state;
 	private String link;
 	public Naver_realTimeKeyword() {
@@ -21,17 +21,11 @@ public class Naver_realTimeKeyword {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
-	public int getPoint() {
+	public String getPoint() {
 		return point;
 	}
-	public void setPoint(int point) {
+	public void setPoint(String point) {
 		this.point = point;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
 	}
 	public String getLink() {
 		return link;
@@ -39,7 +33,13 @@ public class Naver_realTimeKeyword {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	public Naver_realTimeKeyword(int rank, String keyword, int point, String state, String link) {
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public Naver_realTimeKeyword(int rank, String keyword, String point, String state, String link) {
 		super();
 		this.rank = rank;
 		this.keyword = keyword;
@@ -47,5 +47,6 @@ public class Naver_realTimeKeyword {
 		this.state = state;
 		this.link = link;
 	}
+	
 	
 }
