@@ -6,9 +6,14 @@
 ### 개발된 기능
 > crawling_korean_page_0_0_1.jar
 > > naver 실시간 급상승 검색어(2016-12-20)
-> > > Naver_getRealTimeKeyword getRealTimeKeys = new Naver_getRealTimeKeyword();
-
 > > naver 요일별 웹툰 리스트(2016-12-25) 
+
+### 클래스 & 메소드
+
+> Class : Naver_Main
+> > naver 메인페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
+> > Method : getRealTimeKeyword 
+> > > naver 실시간 급상승 검색어
 
 ### 개발된 기능
 > crawling/jar 내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
@@ -21,9 +26,9 @@
 >	> 실행코드
 
 > >```
-> >Naver_getRealTimeKeyword getRealTimeKeys = new Naver_getRealTimeKeyword();
+> >Naver_Main naverMain = new Naver_Main();
 > >String url = new Url().getRealTimeKeywords();
-> >List<Naver_realTimeKeyword> item = getRealTimeKeys.getRealTimeKeyword(url);
+> >List<Naver_realTimeKeyword> item = naverMain.getRealTimeKeyword(url);
 > >new Naver_Viewer().realTimeKeywordView(item);
 > >```
 
