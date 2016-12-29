@@ -14,7 +14,7 @@ new Naver_Viewer().realTimeKeywordView(item);
 
 
 ##### 결과
-
+```
 rank	keyword			state		point			link
 1	최민희			상승		483			http://search.naver.com/search.naver?where=nexearch&query=%EC%B5%9C%EB%AF%BC%ED%9D%AC&sm=top_lve&ie=utf8			
 2	수요웹툰			상승		264			http://search.naver.com/search.naver?where=nexearch&query=%EC%88%98%EC%9A%94%EC%9B%B9%ED%88%B0&sm=top_lve&ie=utf8			
@@ -27,11 +27,11 @@ rank	keyword			state		point			link
 9	복학왕			상승		138			http://search.naver.com/search.naver?where=nexearch&query=%EB%B3%B5%ED%95%99%EC%99%95&sm=top_lve&ie=utf8			
 10	서현진			상승		84			http://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%ED%98%84%EC%A7%84&sm=top_lve&ie=utf8
 
-
+```
 #### 2016-12-25 naver 요일별 웹툰 리스트
 
 ##### 실행코드
-
+```
 Naver_Webtoon naverWeebtoons = new Naver_Webtoon();
 //week : mon tue wed thu fri sat sun
 String week = "tue";
@@ -40,9 +40,9 @@ String orderType = "StarScore";
 String url = new Url().getWeekdayWebtoon(week, orderType);
 List<Naver_Webtoon_weekday> items = naverWeebtoons.getWeekdayWebtoonList(url);
 new Naver_Webtoon_Viewer().weekdayWebtoonView(items);
-
+```
 ##### 결과
-
+```
 titleId	title	artist			score		imgUrl
 650304	슈퍼 시크릿	이온			9.98		http://thumb.comic.naver.net/webtoon/650304/thumbnail/title_thumbnail_20150323144620_t83x90.jpg			
 655744	오!주예수여	아현			9.98		http://thumb.comic.naver.net/webtoon/655744/thumbnail/title_thumbnail_20150601184016_t83x90.jpg			
@@ -70,7 +70,7 @@ titleId	title	artist			score		imgUrl
 119874	덴마	양영순			9.6		http://thumb.comic.naver.net/webtoon/119874/thumbnail/title_thumbnail_20150706185233_t83x90.jpg			
 679547	심연의 하늘 ..	윤인완 / 김선희			6.57		http://thumb.comic.naver.net/webtoon/679547/thumbnail/title_thumbnail_20160704144601_t83x90.jpg			
 686911	공감.jpg	임총			3.49		http://thumb.comic.naver.net/webtoon/686911/thumbnail/title_thumbnail_20161017191626_t83x90.jpg			
-
+```
 ### 업데이트 예정
 
 #### 다음 웹툰 리스트
