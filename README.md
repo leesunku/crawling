@@ -3,6 +3,9 @@
 ### java 버전
 > 1.7
 
+### 사용법
+> crawling/jar  내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
+
 ### 개발된 기능
 > crawling_korean_page_0_0_1.jar
 > > naver 실시간 급상승 검색어(2016-12-20)
@@ -56,9 +59,6 @@
 > > > > > ```int titleId;``` // 웹툰 id
 
 > > > > Return Class : ```List<Naver_Webtoon_weekday>```
-
-### 사용법
-> crawling/jar  내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
 
 ### 예제
 > naver 실시간 급상승 검색어
