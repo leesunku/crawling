@@ -9,6 +9,7 @@
 > crawling_korean_page_0_0_1.jar
 > > 2016-12-20 
 > > > naver 실시간 급상승 검색어
+
 > > 2016-12-25 
 > > > naver 요일별 웹툰 리스트
 
