@@ -16,9 +16,28 @@
 
 > > Method : getRealTimeKeyword 
 > > > naver 실시간 급상승 검색어
+> > > > Input : 
+
+> > > > Output : 
+> > > > > int rank; // 순위
+
+> > > > > String keyword; // 키워드
+
+> > > > > int point; // 수치
+
+> > > > > String state; //상태 : 상승, 하락, 신규
+
+> > > > > String link; // 검색 결과 url
+
+> > > > Return Class : List<Naver_realTimeKeyword>
+
+
+
+> Class : Naver_Webtoon
+> > naver 웹툰페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
 
 ### 개발된 기능
-> crawling/jar 내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
+> crawling/jar  내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
 > > 
 
 ### 예제
@@ -112,5 +131,4 @@
 
 > 작성자
 > > tjsrn0524@naver.com
-
 
