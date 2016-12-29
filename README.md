@@ -29,7 +29,7 @@
 
 > > > > > String link; // 검색 결과 url
 
-> > > > Return Class : List<Naver_realTimeKeyword>
+> > > > Return Class : ```List<Naver_realTimeKeyword>```
 
 
 
