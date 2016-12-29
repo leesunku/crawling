@@ -36,6 +36,29 @@
 > Class : ```Naver_Webtoon```
 > > naver 웹툰페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
 
+> > Method : ```getWeekdayWebtoonList```
+> > > naver 주간 웹툰 리스트
+> > > > Input : 
+> > > > > ```String week;``` // 요일 : mon tue wed thu fri sat sun
+
+> > > > > ```String orderType;``` // 정렬기준 : Update ViewCount StarScore TitleName
+
+> > > > Output : 
+
+> > > > > ```String imgUrl;``` // 웹툰 이미지 url
+
+> > > > > ```String title;``` // 웹툰 제목
+
+> > > > > ```String artist;``` // 웹툰 작가
+
+> > > > > ```float starScore;``` // 웹툰 평점
+
+> > > > > ```int titleId;``` // 웹툰 id
+
+> > > > Return Class : ```List<Naver_Webtoon_weekday>```
+
+
+
 ### 개발된 기능
 > crawling/jar  내의 jar파일을 받아서 아래의 예제를 응용하면 됩니다
 > > 
