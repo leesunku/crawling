@@ -2,6 +2,7 @@ package naver.news.viewer;
 
 import java.util.List;
 
+import naver.news.model.NaverNewsContentVO;
 import naver.news.model.NaverNewsVO;
 
 public class NaverNewsViewer {
@@ -23,5 +24,11 @@ public class NaverNewsViewer {
 			);
 			System.out.println("----------------------------------------------------------------------");
 		}
+	}
+	
+	public void newsContentViewer(NaverNewsContentVO items){
+		System.out.println("title : " + items.getTitle());
+		System.out.println("date : " + items.getDate());
+		System.out.println("content : " + items.getContent());
 	}
 }

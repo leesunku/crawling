@@ -3,6 +3,7 @@ package common;
 import java.util.List;
 
 import naver.news.NaverNews;
+import naver.news.model.NaverNewsContentVO;
 import naver.news.model.NaverNewsVO;
 import naver.news.viewer.NaverNewsViewer;
 
@@ -18,7 +19,16 @@ public class Run2 {
 		page = 페이징
 		date = 날짜
 */
-		List<NaverNewsVO> news = new NaverNews().getNewsList("107", "summary", "20170115", 2);
-		new NaverNewsViewer().newsViewer(news);
+		// 뉴스 리스트 블러오는 부분
+		List<NaverNewsVO> news = new NaverNews().getNewsList("106", "photo", "20170115", 1);
+		//new NaverNewsViewer().newsViewer(news);
+		//
+		
+		// 뉴스의 각 url에서 content 부분 불러오는 부분
+		for (NaverNewsVO content : news) {
+			NaverNewsContentVO item = new NaverNews().getContentList(content.getLink());
+			new NaverNewsViewer().newsContentViewer(item);
+		}
+		
 	}
 }
