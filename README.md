@@ -12,6 +12,12 @@
 
 > > naver 요일별 웹툰 리스트(2016-12-25) 
 
+> > naver 실시간 뉴스 url(2017-01-17
+
+> > naver 요일별 웹툰 리스트(2016-12-25) 
+
+> > naver 실시간 뉴스 url의 컨텐츠(2017-01-17
+
 ### 클래스 & 메소드
 
 > Class : ```Naver_Main```
@@ -60,6 +66,51 @@
 
 > > > > Return Class : ```List<Naver_Webtoon_weekday>```
 
+> Class : ```NaverNews```
+> > naver 뉴스페이지에서 크롤링 할 메소드들을 정의한 클래스이다.
+
+> > Method : ```getNewsList```
+> > > naver 주간 웹툰 리스트
+> > > > Input : 
+> > > > > ```String sid;``` // 요일 : sid = 001-속보, 100-정치, 101-경제, 102-사회, 104-생활/문화, 105-세계, 106-IT/과학, 107-연예, ... 상단 카테고리
+
+> > > > > ```String listType;``` // 리턴리스트타입 : listType =  = title 제목별로 보기, summary = 요약별로 보기, photo = 이미지만 보기
+
+> > > > > ```String date;``` // 날짜 : "20170131"
+
+> > > > > ```int page;``` // 페이지 : 1,2,3,4,...
+
+> > > > Output : 
+
+> > > > > ```String title;``` // 뉴스 제목
+
+> > > > > ```String link;``` // 뉴스 링크
+
+> > > > > ```String imgUrl;``` // 이미지 url(있을경우, photo 리턴)
+
+> > > > > ```String writing;``` // 출처
+
+> > > > > ```String date;``` // 날짜
+
+> > > > > ```String summary;``` // 요약
+
+> > > > Return Class : ```List<NaverNewsVO>```
+
+> > Method : ```getContentList```
+> > > naver 주간 웹툰 리스트
+> > > > Input : 
+> > > > > ```String url;``` // 뉴스url : url
+
+> > > > Output : 
+
+> > > > > ```String title;``` // 뉴스 제목
+
+> > > > > ```String content;``` // 뉴스 콘텐츠
+
+> > > > > ```String date;``` // 날짜
+
+> > > > Return Class : ```List<NaverNewsContentVO>```
+
 ### 예제
 > naver 실시간 급상승 검색어
 >	> 실행코드
@@ -105,30 +156,32 @@
 > >titleId	title	artist			score		imgUrl
 > >650304	슈퍼 시크릿	이온			9.98		http://thumb.comic.naver.net/webtoon/650304/thumbnail/title_thumbnail_20150323144620_t83x90.jpg	
 > >655744	오!주예수여	아현			9.98		http://thumb.comic.naver.net/webtoon/655744/thumbnail/title_thumbnail_20150601184016_t83x90.jpg	
-> >686879	꿈꾸는 소녀,..	한경찰			9.97		http://thumb.comic.naver.net/webtoon/686879/thumbnail/title_thumbnail_20161025142411_t83x90.jpg			
-> >626906	패밀리 사이즈	남지은 / 김인호			9.97		http://thumb.comic.naver.net/webtoon/626906/thumbnail/title_thumbnail_20150810235651_t83x90.jpg			
 > >675554	가우스전자 시..	곽백수			9.97		http://thumb.comic.naver.net/webtoon/675554/thumbnail/title_thumbnail_20160303181701_t83x90.jpg			
-> >675331	하이브3	김규삼			9.96		http://thumb.comic.naver.net/webtoon/675331/thumbnail/title_thumbnail_20160229184941_t83x90.jpg	
-> >654817	미라클! 용사님	정하			9.96		http://thumb.comic.naver.net/webtoon/654817/thumbnail/title_thumbnail_20150514191647_t83x90.jpg			
-> >676695	제로게임	즐바센			9.96		http://thumb.comic.naver.net/webtoon/676695/thumbnail/title_thumbnail_20160323171611_t83x90.jpg			
-> >602287	신의 언어	장래혁			9.96		http://thumb.comic.naver.net/webtoon/602287/thumbnail/title_thumbnail_20150302193945_t83x90.jpg	
-> >689705	완벽한 허니문	화류동풍 / 옛사람			9.95		http://thumb.comic.naver.net/webtoon/689705/thumbnail/title_thumbnail_20161212185807_t83x90.jpg			
-> >686312	열정호구	솔뱅이			9.95		http://thumb.comic.naver.net/webtoon/686312/thumbnail/title_thumbnail_20161010182406_t83x90.jpg
-> >683496	신도림	오세형			9.94		http://thumb.comic.naver.net/webtoon/683496/thumbnail/title_thumbnail_20160805110206_t83x90.jpg			
-> >682637	놓지마 정신줄..	신태훈 / 나승훈			9.94		http://thumb.comic.naver.net/webtoon/682637/thumbnail/title_thumbnail_20160729190602_t83x90.jpg			
-> >616239	윌유메리미	마인드C			9.94		http://thumb.comic.naver.net/webtoon/616239/thumbnail/title_thumbnail_20161031214436_t83x90.jpg
-> >666670	모태솔로수용소..	5iAm			9.93		http://thumb.comic.naver.net/webtoon/666670/thumbnail/title_thumbnail_20151109202307_t83x90.jpg			
-> >679569	차원이 다른 ..	요엔			9.93		http://thumb.comic.naver.net/webtoon/679569/thumbnail/title_thumbnail_20160606180504_t83x90.jpg			
-> >686669	첩보의 별 시..	이상신 / 국중록			9.91		http://thumb.comic.naver.net/webtoon/686669/thumbnail/title_thumbnail_20161014154832_t83x90.jpg			
-> >644180	하루 3컷	배진수			9.9		http://thumb.comic.naver.net/webtoon/644180/thumbnail/title_thumbnail_20141231175152_t83x90.jpg			
-> >653344	기로	구들			9.9		http://thumb.comic.naver.net/webtoon/653344/thumbnail/title_thumbnail_20150420212358_t83x90.jpg			
-> >677740	투명한 동거	정서			9.89		http://thumb.comic.naver.net/webtoon/677740/thumbnail/title_thumbnail_20160418160211_t83x90.jpg	
-> >20853	마음의소리	조석			9.85		http://thumb.comic.naver.net/webtoon/20853/thumbnail/thumbnail_title_20853_83x90.gif			
-> >25455	노블레스	손제호 / 이광수			9.84		http://thumb.comic.naver.net/webtoon/25455/thumbnail/title_thumbnail_20100614120245_t83x90.jpg			
-> >400739	에이머	구동인			9.7		http://thumb.comic.naver.net/webtoon/400739/thumbnail/title_thumbnail_20150504175746_t83x90.jpg			
-> >119874	덴마	양영순			9.6		http://thumb.comic.naver.net/webtoon/119874/thumbnail/title_thumbnail_20150706185233_t83x90.jpg			
-> >679547	심연의 하늘 ..	윤인완 / 김선희			6.57		http://thumb.comic.naver.net/webtoon/679547/thumbnail/title_thumbnail_20160704144601_t83x90.jpg			
-> >686911	공감.jpg	임총			3.49		http://thumb.comic.naver.net/webtoon/686911/thumbnail/title_thumbnail_20161017191626_t83x90.jpg			
+> >...
+> >...
+> >```
+
+> > 실행코드
+> >```
+
+> >		List<NaverNewsVO> news = new NaverNews().getNewsList("106", "photo", "20170115", 1);
+> >		//new NaverNewsViewer().newsViewer(news);
+> >		// 뉴스의 각 url에서 content 부분 불러오는 부분
+> >		for (NaverNewsVO content : news) {
+> >			NaverNewsContentVO item = new NaverNews().getContentList(content.getLink());
+> >			new NaverNewsViewer().newsContentViewer(item);
+> >		}
+> >```
+> > 결과
+> >```
+> >title : ‘문제적 남자’ 수능만점자 이영래, 전소미와 영상통화···“남자 연예인 조심해” 개별 기사의 섹션 정보는 해당 언론사의 분류를 따르고 있습니다.
+> >date : 2017.01.15 오후 11:50
+> >content : ‘문제적 남자’ 수능 만점자 이영래군이 IOI 전소미와 영상통화를 했다. 15일 방송된 tvN ‘뇌섹시대-문제적 남자’에서는 2017년 수능 만점자 김재경, 이영래 군이 출연했다. 이날 이영래 군은 “공부 스트레스를 어떻게 푸느냐?”는 질문에 “전소미를 정말 좋아한다”고 밝혔다. 이에 제작진은 이영래 군이 전소미와 영상통화를 할 수 있는 시간을 제공했다. 전현무는 “전소미 양을 너무너무너무 좋아하는 친구가 있다. 대단히 똑똑한 분”이라며 이영래 군을 소개했다. 이에 전소미는 “저 그 분 알아요. 영래 씨 아닌가?”라며 “영래 오빠 파이팅”이라고 외쳤다. 이영래 군은 “IOI 끝나도 JYP에서 꼭 성공해서 멋진 가수 되길 바랄게”라며 “일단 주위에 남자 연예인 조심하고”라고 말해 웃음을 자아냈다. [사진=tvN ‘뇌섹시대-문제적 남자’ 방송화면캡처] /전종선기자 jjs7377@sedaily.com [서울경제 바로가기] 나와 찰떡 궁합인 대선 후보는? [설문 바로가기] 서울경제와 친해지는 가장 확실한 방법 [페이스북] 저작권자 ⓒ 서울경제, 무단 전재 및 재배포 금지
+> >title : [신서유기3 동영상] 은지원, 40년동안 요강을 '요광'으로 알고있었어요 개별 기사의 섹션 정보는 해당 언론사의 분류를 따르고 있습니다.
+> >date : 2017.01.15 오후 11:46
+> >content : [enews24 전수미 기자] 은지원이 40년 인생을 잃어버렸다? 15일 밤 방송된 tvN '신서유기3'에서는 멤버들이 사물퀴즈를 하는 모습이 그려졌다. 이날 은지원은 요강 사진을 보고 "요광" "요강"이라고 자신있게 외쳤다. 육성으로는 정답처럼 들렸다. 하지만 예민한 나영석PD가 귀를 의심했고, 은지원에게 정답을 글자로 적어보라고 했다. 그 후 은지원은 자신만만하게 '요광'이라고 쓰며 모두를 놀라게 했다. 은지원은 "난 40년 동안 요광으로 알고 있었다. 소름"이라고 분노하며 더 큰 웃음을 선사했다. 전수미 기자 jun@enews24.net [Copyright ⓒ Asia No.1 연예뉴스 enews24.net 무단전재 및 재배포 금지]
+> >...
+> >...
 > >```
 
 
