@@ -16,5 +16,7 @@ public class Url {
 		return "http://comic.naver.com/webtoon/detail.nhn?titleId=" + titleId + "&no=" + no + "&weekday=" + week;
 	}
 	
-	
+	public String getNaverMovie(String tab, String order){
+		return "http://movie.naver.com/movie/running/current.nhn?view=list&tab=" + tab + "&order=" + order;
+	}
 }
